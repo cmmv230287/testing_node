@@ -1,0 +1,24 @@
+{
+  "name": "testing_node",
+  "version": "1.0.0",
+  "description": "testing node´s features #1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmmv230287/testing_node.git"
+  },
+  "author": "cmmv230287",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cmmv230287/testing_node/issues"
+  },
+  "homepage": "https://github.com/cmmv230287/testing_node#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^1.19.1"
+  }
+}
