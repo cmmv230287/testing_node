@@ -1,23 +1,29 @@
-let express = require('express');
-let app = new express();
+let prom = require('./test_modules/promises');
+//let db = require('./test_modules/db2');
+let personas = require('./test_modules/personas');
 
-app.use(express.json());
+/*db.connect().then((res) =>{
+    console.log(res);
+}).catch(err => {
+    console.log(err);
+});*/
 
-app.get('/', (req, res) => {
-    res.send('Home');
-});
+async function showMessageInOrder(){
+    var persons = await personas.getPersonas();
+    console.log(persons);
+    /*await prom.process1(1000, true).then((res) => {
+        console.log(res);    
+    }).catch(rej => console.log(rej));
+    await prom.process2(5000, false).then((res) => {
+        console.log(res);    
+    }).catch(rej => console.log(rej));
+    await prom.process3(500, true).then((res) => {
+        console.log(res);    
+    }).catch(rej => console.log(rej));
+    await prom.process4(10000, false).then((res) => {
+        console.log(res);    
+    }).catch(rej => console.log(rej));*/
+}
+showMessageInOrder();
 
-app.get('/persona/:nombre', (req, res) => {
-    var nombre = req.params.nombre;
-    res.send(`El nombre de la persona es ${nombre}`);
-});
-
-app.post('/persona', (req, res) => {
-    var personas = req.body;
-    var respuesta = `El nombre de la persona es ${personas[0].nombre} ${personas[0].apellido}`;
-    res.send(respuesta);
-});
-
-app.listen(3000, () => {
-    console.log('Server listening on port 3000');
-});
+console.log("fin !!!");

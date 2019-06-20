@@ -19,6 +19,7 @@
   "homepage": "https://github.com/cmmv230287/testing_node#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "mongodb": "^3.2.7",
     "nodemon": "^1.19.1"
   }
 }
