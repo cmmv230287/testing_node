@@ -18,17 +18,18 @@ module.exports = {
     disconnect: function(){
         if(instance && !isDisconnecting){
             isDisconnecting = true;
+
             console.log("Desconectando instancia de Mongo");
+            MongoClient.close();
             return new Promise((res, rej) => {
-                instance.close((err, result) => {
+                MongoClient.close();/*((err, result) => {
                     if(err){
-                        rej(err); 
                         isDisconnecting = false; 
-                        return;
+                        return rej(err); 
                     }
                     console.log("Instancia de Mongo desconectada");
-                    res();
-                });
+                    res(result);
+                });*/
             });
         }
     },
